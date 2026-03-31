@@ -1,3 +1,5 @@
+
+
 const vouchers = [
   { serialNumber: "24062574", fullName: "אורי קסטיאל" },
   { serialNumber: "51822977", fullName: "מירב כץ" },
@@ -28,7 +30,7 @@ function onInit(){
 
 
 function _getVoucherHTML(name, serialNumber){
-    return ` <div class="voucher">
+    return `<div class="voucher-container"> <div class="voucher">
 
     <!-- top -->
     <div class="top">
@@ -76,5 +78,5 @@ function _getVoucherHTML(name, serialNumber){
 
     </div>
 
-  </div>`
+  </div></div>`
 }
