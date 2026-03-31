@@ -8,194 +8,250 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+ <style>
+  * {
+    box-sizing: border-box;
+  }
 
+  @font-face {
+  font-family: 'main';
+  src: url('/fonts/main.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+  @font-face {
+  font-family: 'secondary';
+  src: url('/fonts/secondary.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+  @font-face {
+  font-family: 'third';
+  src: url('/fonts/third.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+  body {
+    margin: 0;
+    background: #f7f3f6;
+    /* font-family: 'Heebo', sans-serif; */
+    font-family: 'main';
+    display: grid;
+    gap: 2em;
+    margin-block: 2em;
+    justify-items: center;
+  }
+
+  .vouchers-container {
+    padding: 2em;
+    width: calc(760px + 2em);
+  }
+
+  .voucher {
+    width: 760px;
+    background: linear-gradient(145deg, #ffffff, #f6f0f4);
+    border-radius: 20px;
+    border: 1px solid rgba(159, 76, 124, 0.25);
+    padding: 24px 32px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 12px 30px rgba(159, 76, 124, 0.12);
+    margin: 2em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* subtle brand strip */
+  .voucher::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #9f4c7c, #cceae7);
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .serial {
+    font-size: 12px;
+    color: #9f4c7c;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+
+  .serial strong {
+    color: #6e2f52;
+    font-size: 14px;
+  }
+
+  /* barcode */
+  .barcode-wrapper {
+    text-align: center;
+    margin-top: -8px;
+    margin-bottom: -6px;
+  }
+
+  .barcode {
+    height: 80px;
+    opacity: 0.95;
+  }
+
+  .barcode-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #7a5a6e;
+    margin-top: 4px;
+  }
+
+  .center {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    /* font-family: 'Playfair Display', serif; */
+    font-size: 32px;
+    margin: 0 0 6px;
+    color: #9f4c7c;
+    font-family: 'third';
+  }
+  
+  .title.coffee {
+    font-size: 28px;
+    color: #7a3a60;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    color: #5f6f73;
+    margin: 0;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .name-block {
+    text-align: right;
+  }
+
+  .label {
+    font-size: 18px;
+    color: #7a5a6e;
+    margin-bottom: 6px;
+  }
+
+  .name {
+    font-size: 28px;
+    font-weight: 500;
+    color: #2f2a24;
+  }
+
+  .note {
+    font-size: 16px;
+    color: #6b7c80;
+    text-align: left;
+    max-width: 260px;
+    line-height: 1.4;
+  }
+
+  /* subtle secondary accent background */
+  .voucher::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 180px;
+    height: 180px;
+    background: #cceae7;
+    opacity: 0.25;
+    border-radius: 50%;
+  }
+
+  @media print {
     body {
-      margin: 0;
-      background: #f6f1e8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      /* height: 100vh; */
-      font-family: 'Heebo', sans-serif;
-      display: grid;
-      gap:2em;
-      margin-block: 2em;
-
-    }
-
-    .vouchers-container {
-      padding: 2em;
-
+      background: white;
+      height: auto;
     }
 
     .voucher {
-      width: 760px;
-      /* height: 360px; */
-      background: linear-gradient(145deg, #fffdf9, #f3eadf);
-      border-radius: 20px;
-      border: 1px solid #d8cbb4;
-      padding: 24px 32px 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      margin: 2em;
-
+      box-shadow: none;
     }
-
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .logo {
-      width: 120px;
-    }
-
-    .serial {
-      font-size: 12px;
-      color: #8a7a66;
-      letter-spacing: 1px;
-      text-align: left;
-    }
-
-    /* barcode */
-    .barcode-wrapper {
-      text-align: center;
-      margin-top: -8px;
-      margin-bottom: -6px;
-    }
-
-    .barcode {
-      height: 80px;
-      opacity: 0.9;
-    }
-
-    .barcode-number {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: #7d6c59;
-      margin-top: 2px;
-    }
-
-    .center {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .title {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      margin: 0 0 6px;
-      color: #3b2f23;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: #6b5c4c;
-      margin: 0;
-    }
-
-    .bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .name-block {
-      text-align: right;
-    }
-
-    .label {
-      font-size: 18px;
-      color: #9a8a78;
-      margin-bottom: 6px;
-    }
-
-    .name {
-      font-size: 28px;
-      font-weight: 500;
-      color: #2f2a24;
-    }
-
-    .note {
-      font-size: 18px;
-      color: #8b7c6c;
-      text-align: left;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    @media print {
-      body {
-        background: white;
-        height: auto;
-      }
-
-      .voucher {
-        box-shadow: none;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body onload="onInit()">
   
   <!-- 
-  <div class="voucher">
-
+    
+  <div class="voucher-container"> <div class="voucher">
+    
 
     <div class="top">
       <img
-        class="logo"
-        src="imgs/1.png"
-        alt="לוגו קפה גן סיפור"
+      class="logo"
+      src="imgs/1.png"
+      alt="לוגו קפה גן סיפור"
       />
-
+      
       <div class="serial">
         מס' שובר<br />
-        <strong>{{SERIAL_NUMBER}}</strong>
+        <strong>${serialNumber}</strong>
       </div>
     </div>
-
+    
     
 
     <div class="center">
       <h1 class="title">שובר לארוחה בשווי 200 ש״ח</h1>
-      <p class="subtitle">מסעדת קפה גן סיפור · תקף בכל סניפי הרשת</p>
+      <strong class="title coffee">קפה גן סיפור</strong>
+      <p class="subtitle">תקף בכל סניפי הרשת</p>
     </div>
-
+    
 
     <div class="barcode-wrapper">
       <img
-        class="barcode"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoTzkJlyJOviYgWcwFw-uYIG_bLuPn89xSsA&s"
-        alt="barcode"
+      class="barcode"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoTzkJlyJOviYgWcwFw-uYIG_bLuPn89xSsA&s"
+      alt="barcode"
       />
-      <div class="barcode-number">{{SERIAL_NUMBER}}</div>
+      <div class="barcode-number">${serialNumber}</div>
     </div>
-
+    
 
     <div class="bottom">
-
+      
       <div class="name-block">
         <div class="label">עבור</div>
-        <div class="name">{{FULL_NAME}}</div>
+        <div class="name">${name}</div>
       </div>
-
+      
       <div class="note">
         השובר אישי ואינו ניתן להעברה.<br />
         יש להציג בעת ההגעה למסעדה.
       </div>
-
+      
     </div>
-
-  </div>
- -->
+    
+  </div></div>
+-->
   <script src="js/main.js"></script>
 </body>
 </html>

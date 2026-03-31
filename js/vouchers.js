@@ -1,4 +1,5 @@
-export const vouchers = [
+export 
+ const vouchers = [
   { serialNumber: "24062574", fullName: "אורי קסטיאל" },
   { serialNumber: "51822977", fullName: "מירב כץ" },
   { serialNumber: "55892925", fullName: "גאורגי מקוקישווילי" },
