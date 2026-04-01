@@ -48,10 +48,12 @@ async function generateSnapshots() {
 
   const elements = await page.locator('.voucher-container').all();
 
+  var unknownCounter = 1;
   for (let i = 0; i < elements.length; i++) {
     const voucher = vouchers[i];
+    const name = voucher.fullName !== ' ' ? voucher.fullName : unknownCounter++;
     await elements[i].screenshot({
-      path: `output/${voucher.fullName}-${voucher.serialNumber}.png`,
+      path: `output/${name}-${voucher.serialNumber}.png`,
     });
   }
 
