@@ -1,6 +1,3 @@
-
-
-
  const vouchers = [
   { serialNumber: "24062574", fullName: "אורי קסטיאל" },
   { serialNumber: "51822977", fullName: "מירב כץ" },
@@ -16,7 +13,10 @@
   { serialNumber: "34994370", fullName: "משה זיסקינד" },
   { serialNumber: "94574914", fullName: "נעמי רמון" },
   { serialNumber: "74276854", fullName: "סמדר דינור" },
-  { serialNumber: "87921190", fullName: "תמי אריאלי" }
+  { serialNumber: "87921190", fullName: "תמי אריאלי" },
+  { serialNumber: "61391980", fullName:"דוד בן הרוש" },
+  { serialNumber: "19658397", fullName:"רז קוקלר" },
+
 ];
 
 function onInit(){
@@ -50,7 +50,7 @@ function _getVoucherHTML(name, serialNumber){
     <!-- center -->
     <div class="center">
       <h1 class="title">שובר לארוחה בשווי 200 ש״ח</h1>
-      <strong class="title coffee">קפה גן סיפור</strong>
+      <strong class="title coffee">קָפֶה גַּן סִפּוּר</strong>
       <p class="subtitle">תקף בכל סניפי הרשת</p>
     </div>
 

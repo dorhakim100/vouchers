@@ -14,5 +14,8 @@ export
   { serialNumber: "34994370", fullName: "משה זיסקינד" },
   { serialNumber: "94574914", fullName: "נעמי רמון" },
   { serialNumber: "74276854", fullName: "סמדר דינור" },
-  { serialNumber: "87921190", fullName: "תמי אריאלי" }
+  { serialNumber: "87921190", fullName: "תמי אריאלי" },
+  { serialNumber: "61391980", fullName:"דוד בן הרוש" },
+  { serialNumber: "19658397", fullName:"רז קוקלר" },
+
 ];
